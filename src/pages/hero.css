@@ -1,0 +1,136 @@
+@import url('https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
+
+@font-face {
+  font-family: 'ClashDisplay-Semibold';
+  src: url('../assets/ClashDisplay_Complete/Fonts/TTF/ClashDisplay-Variable.ttf') format('truetype');
+  font-display: swap;
+  font-style: normal;
+}
+
+.hero-section {
+  position: relative;
+  width: 100%;
+  height: 85vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: visible;
+  margin-bottom: 5rem;
+}
+
+/* ─── Video Background ─────────────────────────────────────────────────── */
+.hero-video-wrapper {
+  position: absolute;
+  top: -10%;
+  left: 60%;
+  transform: translateX(-50%);
+  width: 100vw;
+  height: 100%;
+  z-index: -1;
+  pointer-events: none;
+  /* Masking to fade the video at the edges and bottom */
+  mask-image: radial-gradient(circle at center, black 40%, transparent 85%);
+  -webkit-mask-image: radial-gradient(circle at center, black 40%, transparent 85%);
+}
+
+.hero-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.4;
+}
+
+.hero-video-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 30%;
+  background: linear-gradient(to bottom, transparent, #ffffff);
+}
+
+/* ─── Content Layout ────────────────────────────────────────────────────── */
+.content {
+  width: 100%;
+  max-width: 1400px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+}
+
+.name-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.left-text, .right-text {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.left-text {
+  align-items: flex-end;
+}
+
+.right-text {
+  align-items: flex-start;
+}
+
+.left-text p, .right-text p {
+  font-family: "ClashDisplay-Semibold", sans-serif;
+  font-weight: 600;
+  font-size: clamp(4rem, 8vw, 103px);
+  line-height: 1;
+  color: #333333;
+  margin: 0;
+  letter-spacing: -0.02em;
+}
+
+/* ─── Hero Labels (Small Text) ────────────────────────────────────────── */
+.hero-label {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #666666;
+  opacity: 0.8;
+  letter-spacing: -0.01em;
+}
+
+.top-left {
+  margin-bottom: 2rem;
+  margin-right: 15%;
+}
+
+.top-right {
+  margin-bottom: 2rem;
+  margin-left: 55%;
+}
+
+.bottom-right {
+  margin-top: 5.5rem;
+  margin-left: 45%;
+}
+
+/* ─── Center Card Placeholder ────────────────────────────────────────── */
+.center-card {
+  width: 400px;
+  height: 580px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  perspective: 1000px;
+}
+
+.center-card > div {
+  width: 100% !important;
+  height: 100% !important;
+  margin: 0 !important;
+  transform: none !important;
+}

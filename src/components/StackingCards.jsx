@@ -1,0 +1,98 @@
+import React, { useRef } from 'react';
+import { motion, useScroll, useTransform, useMotionTemplate } from 'framer-motion';
+import './stackingCards.css';
+
+const cards = [
+  {
+    id: 1,
+    label: "Core Strength",
+    title: "01.Full Stack Development",
+    description: "I build end-to-end web applications using the MERN stack — from database design to polished frontend interfaces. Every app is built for performance, security, and scale.",
+    skills: ["MongoDB", "Express.js", "React.js", "Node.js", "RESTful API Development", "JWT Authentication"],
+    color: "rgba(255, 255, 255, 0.6)"
+  },
+  {
+    id: 2,
+    label: "Emerging Speciality",
+    title: "02. AI-Powered Applications",
+    description: "I integrate AI models and tools into real products — from deepfake detection pipelines to LLM-powered workflows. I build AI features that actually work in production.",
+    skills: ["Python", "Ollama (local LLMs)", "HTML, JS, CSS interfaces", "Design Systems", "AI/ML pipelines"],
+    color: "rgba(255, 255, 255, 0.6)"
+  },
+  {
+    id: 3,
+    label: "Reliability Focused",
+    title: "03. Backend & API Engineering",
+    description: "I design and build reliable backends — RESTful APIs, authentication systems, access control, and data management layers that keep applications secure and running smoothly.",
+    skills: ["Node.js, Express.js", "Python", "JWT & Session Auth", "Access Control Systems","Database Design"],
+    color: "rgba(255, 255, 255, 0.6)"
+  },
+  {
+    id: 4,
+    label: "Security First",
+    title: "04. Cloud Services & Auth",
+    description: "I implement cloud-connected features and robust authentication systems that protect user data and scale with demand.",
+    skills: ["Cloud Services integration", "Secure data handling","Critical Thinking","Team Collaboration"],
+    color: "rgba(255, 255, 255, 0.6)"
+  }
+];
+
+const Card = ({ card, i, progress, range, targetScale }) => {
+  const container = useRef(null);
+  
+  // Transform scale and opacity for a better stacking effect
+  const scale = useTransform(progress, range, [1, targetScale]);
+  
+  // Alternate tilt direction based on index
+  const tiltDirection = i % 2 === 0 ? -2 : 2;
+  const rotate = useTransform(progress, range, [0, tiltDirection]);
+  
+  return (
+    <div ref={container} className="card-container">
+      <motion.div 
+        style={{ 
+          scale, 
+          rotate,
+          backgroundColor: card.color, 
+          top: `calc(${i * 45}px)` 
+        }} 
+        className="card"
+      >
+        <span className="card-label">{card.label}</span>
+        <h2 className="card-title">{card.title}</h2>
+        <p className="card-description">{card.description}</p>
+        <ul className="card-skills">
+          {card.skills.map((skill, index) => (
+            <li key={index}>{skill}</li>
+          ))}
+        </ul>
+      </motion.div>
+    </div>
+  );
+};
+
+export default function StackingCards() {
+  const container = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: container,
+    offset: ['start start', 'end end']
+  });
+
+  return (
+    <div ref={container} className="stacking-cards-wrapper">
+      {cards.map((card, i) => {
+        const targetScale = 1 - ( (cards.length - i) * 0.03);
+        return (
+          <Card 
+            key={card.id} 
+            card={card} 
+            i={i} 
+            progress={scrollYProgress} 
+            range={[i * 0.25, 1]} 
+            targetScale={targetScale}
+          />
+        );
+      })}
+    </div>
+  );
+}

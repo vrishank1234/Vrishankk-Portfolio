@@ -1,0 +1,113 @@
+@import url('https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
+
+
+
+@font-face {
+  font-family: 'GeneralSans-Regular';
+  src: url('../assets/GeneralSans_Complete/Fonts/TTF/GeneralSans-Variable.ttf') format('truetype');
+  font-weight: 400;
+  font-display: swap;
+  font-style: normal;
+}
+
+
+@font-face {
+  font-family: 'GeneralSans-Medium';
+  src: url('../assets/GeneralSans_Complete/Fonts/TTF/GeneralSans-Variable.ttf') format('truetype');
+  font-display: swap;
+  font-style: normal;
+}
+
+
+
+.stacking-cards-wrapper {
+  margin-top: 5vh;
+  position: relative;
+  scroll-behavior: smooth;
+}
+
+.card-container {
+  height: 40vh;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  /* aligns to the left */
+  position: sticky;
+  top: 0;
+  padding-top: 15vh;
+  scroll-behavior: smooth;
+  width: 500px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  position: relative;
+  width: 500px;
+  max-width: 95vw;
+  border-radius: 40px;
+  padding: 50px;
+  transform-origin: top center;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  background-color: #ffffff;
+  /* Will be overridden by framer motion inline style */
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  text-align: left;
+}
+
+.card-label {
+  font-family: 'Gloria Hallelujah', cursive;
+  font-size: 14px;
+  color: #333333;
+  margin-bottom: 25px;
+  font-weight: 100;
+}
+
+.card-title {
+  font-family: 'GeneralSans-Medium';
+  font-weight: 500;
+  font-size: 2rem;
+  margin-bottom: 30px;
+  margin-top: 0;
+  color: #333333;
+  letter-spacing: -0.02em;
+}
+
+.card-description {
+  font-family: 'GeneralSans-Regular';
+  line-height: 1.4;
+  margin-bottom: 40px;
+  color: #a5a5a5;
+  font-weight: 500;
+}
+
+.card-skills {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+}
+
+.card-skills li {
+  font-family: "GeneralSans-Regular";
+  font-size: 14px;
+  color: #a5a5a5;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-left: 10%;
+  font-weight: 400;
+}
+
+.card-skills li::before {
+  content: "•";
+  color: #bbbbbb;
+  font-size: 1.5rem;
+  font-family: "GeneralSans-Regular";
+  font-weight: 400;
+}

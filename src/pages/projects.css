@@ -1,0 +1,100 @@
+.projects{
+    min-height: 55vh;
+    margin-left: 17%;
+    margin-right: 17%;
+    padding-bottom: 6rem;
+}
+
+.projects-content{
+    display: flex;
+    flex-direction: column;
+    margin-top: 7%;
+}
+
+.projects-text h5 {
+    font-family: "Gloria Hallelujah";
+    font-weight: 400;
+    color: #333333;
+    font-size: 16px;
+    line-height: 18px;
+}
+
+
+
+span {
+  color: #e27501;
+}
+
+.projects-text h3 {
+  font-family: "GeneralSans-Medium";
+  font-weight: 500;
+  font-size: 3rem;
+  margin: 0%;
+  color: #333333;
+}
+
+
+.projects-text p {
+  font-family: "GeneralSans-Regular";
+  font-weight: 400;
+  font-size: 1rem;
+  margin: 0%;
+  color: #6d6d6d;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  margin-top: 3.5rem;
+  width: 100%;
+}
+
+.project-card {
+  background-color: #eaeaea;
+  border-radius: 24px;
+  padding: 2.5rem;
+  aspect-ratio: 4 / 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+}
+
+.project-media-wrapper {
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  overflow: hidden;
+  /* box-shadow: 0 10px 30px rgba(0,0,0,0.08); */
+
+}
+
+
+
+.project-media {
+  width: 100%;
+  height: 100%;
+  object-fit :contain;
+  display: block;
+}
+
+@media (max-width: 1024px) {
+  .projects {
+    margin-left: 5%;
+    margin-right: 5%;
+  }
+}
+
+@media (max-width: 768px) {
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+}

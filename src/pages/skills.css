@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
+
+@font-face {
+  font-family: 'GeneralSans-Regular';
+  src: url('../assets/GeneralSans_Complete/Fonts/TTF/GeneralSans-Variable.ttf') format('truetype');
+  font-display: swap;
+  font-style: normal;
+}
+
+
+@font-face {
+  font-family: 'GeneralSans-Medium';
+  src: url('../assets/GeneralSans_Complete/Fonts/TTF/GeneralSans-Variable.ttf') format('truetype');
+  font-display: swap;
+  font-style: normal;
+}
+
+
+/* Existing skills styles */
+.skills {
+  min-height: 100vh;
+  position: relative;
+  padding: 4rem 0;
+}
+
+.fusion-content {
+  display: flex;
+  align-items: center;
+  margin-left: 17%;
+  margin-bottom: 3rem;
+  width: calc(100% - 17%);
+}
+
+.fusion-text {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.fusion-text h5 {
+  font-family: 'Gloria Hallelujah',Arial, Helvetica, sans-serif;
+  font-weight: 400;
+  color: #333333;
+  font-size: 16px;
+}
+
+span {
+  color: #e27501;
+}
+
+.fusion-text h3 {
+  font-family: "GeneralSans-Medium";
+  font-weight: 500;
+  font-size: 3rem;
+  margin: 0%;
+}
+
+.fusion-text p {
+  font-family: "GeneralSans-Regular";
+  font-weight: 400;
+  font-size: 1rem;
+  margin: 0%;
+  margin-top: 2%;
+  color: #6d6d6d;
+}
+
+/* Container for the stack */
+.stack-container {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  margin-top: 2rem;
+}
+
+/* Custom styles for your skill cards */
+.skill-card-content {
+  text-align: left;
+  width: 100%;
+}
+
+.skill-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  display: inline-block;
+}
+
+.skill-card-content h3 {
+  font-family: "GeneralSans-Regular";
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin: 0.5rem 0 1rem 0;
+  background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.skill-card-content p {
+  font-family: "GeneralSans-Regular";
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.6;
+  color: #6d6d6d;
+  margin: 0;
+}
