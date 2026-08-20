@@ -9,7 +9,7 @@ const cards = [
     title: "01.Full Stack Development",
     description: "I build end-to-end web applications using the MERN stack — from database design to polished frontend interfaces. Every app is built for performance, security, and scale.",
     skills: ["MongoDB", "Express.js", "React.js", "Node.js", "RESTful API Development", "JWT Authentication"],
-    color: "rgba(255, 255, 255, 0.6)"
+    color: "#ffffff"
   },
   {
     id: 2,
@@ -17,7 +17,7 @@ const cards = [
     title: "02. AI-Powered Applications",
     description: "I integrate AI models and tools into real products — from deepfake detection pipelines to LLM-powered workflows. I build AI features that actually work in production.",
     skills: ["Python", "Ollama (local LLMs)", "HTML, JS, CSS interfaces", "Design Systems", "AI/ML pipelines"],
-    color: "rgba(255, 255, 255, 0.6)"
+    color: "#ffffff"
   },
   {
     id: 3,
@@ -25,7 +25,7 @@ const cards = [
     title: "03. Backend & API Engineering",
     description: "I design and build reliable backends — RESTful APIs, authentication systems, access control, and data management layers that keep applications secure and running smoothly.",
     skills: ["Node.js, Express.js", "Python", "JWT & Session Auth", "Access Control Systems","Database Design"],
-    color: "rgba(255, 255, 255, 0.6)"
+    color: "#ffffff"
   },
   {
     id: 4,
@@ -33,7 +33,7 @@ const cards = [
     title: "04. Cloud Services & Auth",
     description: "I implement cloud-connected features and robust authentication systems that protect user data and scale with demand.",
     skills: ["Cloud Services integration", "Secure data handling","Critical Thinking","Team Collaboration"],
-    color: "rgba(255, 255, 255, 0.6)"
+    color: "#ffffff"
   }
 ];
 
@@ -53,8 +53,9 @@ const Card = ({ card, i, progress, range, targetScale }) => {
         style={{ 
           scale, 
           rotate,
-          backgroundColor: card.color, 
-          top: `calc(${i * 45}px)` 
+          backgroundColor: card.color || '#ffffff', 
+          top: `calc(${i * 45}px)`,
+          zIndex: i + 1
         }} 
         className="card"
       >
