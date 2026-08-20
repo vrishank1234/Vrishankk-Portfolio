@@ -10,7 +10,7 @@ import About from './pages/About.jsx';
 import TextScroll from './pages/TextScroll.jsx'
 import Projects from './pages/Projects.jsx'
 import SideCard from './components/SideCard.jsx';
-import Navbar from './components/Navbar.jsx';
+// import Navbar from './components/Navbar.jsx';
 import bgVideo from './assets/abstract-white-background-4k-motion-graphics-background-loop-white-video-loop-1080-ytshorts.savetube.me_.mp4';
 import Career from './pages/Career.jsx';
 
@@ -41,7 +41,7 @@ const App = () => {
 
   return (
     <div style={{ position: 'relative' }}>
-      <Navbar />
+      {/* <Navbar /> */}
       
       <div style={{ 
         minHeight: '100vh',

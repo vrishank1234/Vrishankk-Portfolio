@@ -21,7 +21,7 @@ const About = () => {
             </p> 
             <p>My impact is incomparable.</p>
          </div>
-          <Button />
+          <Button href="/resume.pdf" download={false} />
         </div>
     </div>
     

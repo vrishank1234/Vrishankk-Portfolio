@@ -2,7 +2,14 @@ import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import "./Button.css";
 
-const Button = ({ text = "Download CV" }) => {
+const Button = ({ 
+  text = "Download CV", 
+  href = "#", 
+  target = "_blank", 
+  rel = "noopener noreferrer",
+  download = false,
+  ...props 
+}) => {
   const buttonRef = useRef(null);
   const flairRef = useRef(null);
 
@@ -82,7 +89,10 @@ const Button = ({ text = "Download CV" }) => {
 
   return (
     <a
-      href="#"
+      href={href}
+      target={href !== "#" && href.startsWith("http") ? target : undefined}
+      rel={href !== "#" && href.startsWith("http") ? rel : undefined}
+      download={download ? (typeof download === "string" ? download : true) : undefined}
       ref={buttonRef}
       className="button button--stroke"
       style={{
@@ -91,6 +101,7 @@ const Button = ({ text = "Download CV" }) => {
         fontWeight: "400",
       }}
       data-block="button"
+      {...props}
     >
       <span className="button__flair" ref={flairRef}></span>
       <span className="button__label">{text}</span>
