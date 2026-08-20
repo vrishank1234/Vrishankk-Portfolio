@@ -1,44 +1,42 @@
-.projects{
-    min-height: 55vh;
-    margin-left: 17%;
-    margin-right: 17%;
-    padding-bottom: 6rem;
+.projects {
+  min-height: 55vh;
+  margin-left: 17%;
+  margin-right: 17%;
+  padding-bottom: 6rem;
 }
 
-.projects-content{
-    display: flex;
-    flex-direction: column;
-    margin-top: 7%;
+.projects-content {
+  display: flex;
+  flex-direction: column;
+  margin-top: 7%;
 }
 
 .projects-text h5 {
-    font-family: "Gloria Hallelujah";
-    font-weight: 400;
-    color: #333333;
-    font-size: 16px;
-    line-height: 18px;
+  font-family: "Gloria Hallelujah", cursive;
+  font-weight: 400;
+  color: #333333;
+  font-size: 16px;
+  line-height: 18px;
+  margin-bottom: 0.5rem;
 }
 
-
-
-span {
+.projects-text span {
   color: #e27501;
 }
 
 .projects-text h3 {
-  font-family: "GeneralSans-Medium";
+  font-family: "GeneralSans-Medium", sans-serif;
   font-weight: 500;
   font-size: 3rem;
-  margin: 0%;
+  margin: 0;
   color: #333333;
 }
 
-
 .projects-text p {
-  font-family: "GeneralSans-Regular";
+  font-family: "GeneralSans-Regular", sans-serif;
   font-weight: 400;
   font-size: 1rem;
-  margin: 0%;
+  margin: 0.5rem 0 0 0;
   color: #6d6d6d;
 }
 
@@ -50,42 +48,198 @@ span {
   width: 100%;
 }
 
+/* ─── Project Card ──────────────────────────────────────────────────────── */
 .project-card {
+  position: relative;
   background-color: #eaeaea;
-  border-radius: 24px;
-  padding: 2.5rem;
+  border-radius: 20px;
   aspect-ratio: 4 / 3;
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: transform 0.3s ease;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1);
   cursor: pointer;
   overflow: hidden;
-  border-radius: 12px;
+  border: 1px solid rgba(0, 0, 0, 0.04);
+  box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.04);
 }
 
-.project-card:hover {
-  transform: translateY(-5px);
+.project-card:hover,
+.project-card:focus-within {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 35px -10px rgba(0, 0, 0, 0.15);
+}
+
+.project-card:focus-visible {
+  outline: 2px solid #e27501;
+  outline-offset: 3px;
 }
 
 .project-media-wrapper {
   width: 100%;
   height: 100%;
-  border-radius: 20px;
+  padding: 1.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   overflow: hidden;
-  /* box-shadow: 0 10px 30px rgba(0,0,0,0.08); */
-
+  box-sizing: border-box;
 }
-
-
 
 .project-media {
   width: 100%;
   height: 100%;
-  object-fit :contain;
+  object-fit: contain;
   display: block;
+  border-radius: 12px;
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), filter 0.5s ease;
 }
 
+.project-card:hover .project-media,
+.project-card:focus-within .project-media {
+  transform: scale(1.04);
+  filter: brightness(0.75);
+}
+
+/* ─── Project Hover Overlay ─────────────────────────────────────────────── */
+.project-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(14, 14, 18, 0.65) 0%,
+    rgba(10, 10, 14, 0.88) 50%,
+    rgba(6, 6, 8, 0.96) 100%
+  );
+  backdrop-filter: blur(12px) saturate(150%);
+  -webkit-backdrop-filter: blur(12px) saturate(150%);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+              visibility 0.35s ease;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-sizing: border-box;
+  z-index: 2;
+}
+
+.project-card:hover .project-overlay,
+.project-card:focus-within .project-overlay {
+  opacity: 1;
+  visibility: visible;
+}
+
+.project-overlay-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  width: 100%;
+  transform: translateY(12px);
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.project-card:hover .project-overlay-content,
+.project-card:focus-within .project-overlay-content {
+  transform: translateY(0);
+}
+
+/* Header: Category Badge & Action Link */
+.project-overlay-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.project-category-badge {
+  font-family: "GeneralSans-Medium", sans-serif;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #e27501;
+  background: rgba(226, 117, 1, 0.16);
+  border: 1px solid rgba(226, 117, 1, 0.4);
+  padding: 0.35rem 0.75rem;
+  border-radius: 999px;
+  backdrop-filter: blur(4px);
+  font-weight: 600;
+}
+
+.project-link-btn {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.12);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  text-decoration: none;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.project-link-btn:hover {
+  background: #e27501;
+  border-color: #e27501;
+  color: #ffffff;
+  transform: scale(1.1) rotate(5deg);
+}
+
+/* Body: Title & Description */
+.project-overlay-body {
+  margin-top: auto;
+  margin-bottom: 0.75rem;
+}
+
+.project-title {
+  font-family: "GeneralSans-Medium", sans-serif;
+  font-size: 1.45rem;
+  font-weight: 600;
+  color: #ffffff;
+  margin: 0 0 0.5rem 0;
+  letter-spacing: -0.02em;
+  line-height: 1.25;
+}
+
+.project-description {
+  font-family: "GeneralSans-Regular", sans-serif;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.82);
+  margin: 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Footer: Tags */
+.project-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+}
+
+.project-tag {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 0.72rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.9);
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  padding: 0.25rem 0.6rem;
+  border-radius: 6px;
+  backdrop-filter: blur(4px);
+  letter-spacing: 0.01em;
+}
+
+/* ─── Responsive Breakpoints ────────────────────────────────────────────── */
 @media (max-width: 1024px) {
   .projects {
     margin-left: 5%;
@@ -96,5 +250,19 @@ span {
 @media (max-width: 768px) {
   .projects-grid {
     grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .project-overlay {
+    padding: 1.5rem;
+  }
+
+  .project-title {
+    font-size: 1.3rem;
+  }
+
+  .project-description {
+    font-size: 0.85rem;
+    -webkit-line-clamp: 2;
   }
 }

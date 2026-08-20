@@ -1,0 +1,42 @@
+[
+  {
+    "id": "project-1",
+    "title": "Cashflow Copilot",
+    "category": "Fintech Mobile App",
+    "description": "An intelligent financial dashboard providing real-time cashflow forecasting, risk simulation, and automated insights.",
+    "tags": ["React Native", "Ollama", "Fintech", "UI/UX"],
+    "link": "#",
+    "mediaKey": "project1",
+    "mediaType": "image"
+  },
+  {
+    "id": "project-2",
+    "title": "Team Forge",
+    "category": "Developer Tools & AI",
+    "description": "AI compatibility platform for Elite gamers to team up with similar gaming style players",
+    "tags": ["Next.js", "Design System", "Dark Mode", "Telemetry"],
+    "link": "#",
+    "mediaKey": "project2",
+    "mediaType": "image"
+  },
+  {
+    "id": "project-3",
+    "title": "Readwise AI",
+    "category": "AI for Daily use",
+    "description": "ReadWise AI uses AI to turn lengthy articles and documents into concise summaries and key insights, helping users understand information faster.",
+    "tags": ["React", "Ollama", "Supabase"],
+    "link": "#",
+    "mediaKey": "project3",
+    "mediaType": "image"
+  },
+  {
+    "id": "project-4",
+    "title": "Crypto Marketplace",
+    "category": "Crypto Currency",
+    "description": "Loconomics is a logistics optimization platform that finds the most efficient routes and warehouse connections, helping businesses reduce transportation time, distance, and costs.",
+    "tags": ["Crypto Dataset", "Mongo DB", "Reactjs"],
+    "link": "#",
+    "mediaKey": "project4",
+    "mediaType": "image"
+  }
+]
