@@ -19,7 +19,7 @@ const Career = () => {
               <h4>Software Developer</h4>
               <p>Let's Upgrade</p>
             </div>
-            <div className="exp-date">July 2025 – Current</div>
+            <div className="exp-date">July 2025 – April 2026</div>
           </div>
 
           <div className="experience-item">
@@ -27,7 +27,7 @@ const Career = () => {
               <h4>Freelance Developer / Builder</h4>
               <p>Self-Employed</p>
             </div>
-            <div className="exp-date">2023 – Present</div>
+            <div className="exp-date">April 2026 – Present</div>
           </div>
         </div>
       </div>

@@ -11,17 +11,17 @@ const About = () => {
             <h3><span>Builder</span> at the Core</h3>
             <p className='deisgn'>Developer. Builder. Problem-solver.</p>
             <p>I'm a full-stack MERN developer with a focus on building secure, scalable, and AI-powered<br></br> 
-            applications — backed by real professional experience and a product-first mindset.<br></br> 
+            applications, with cybersecurity at the core — backed by real professional experience and a product-first mindset.<br></br> 
             I've shipped features in production, collaborated in engineering teams, and built projects <br></br>
-            that tackle real problems.<br></br>
+            that tackle real problems, with secure authentication, API protection, and data safety built in.<br></br>
             <br></br>
             Currently pursuing my B.Tech in Computer Science, I balance academics with<br></br>
-            hands-on work — hackathons, freelance builds, and real-world development. I move fast, <br></br>
-            think in systems, and care deeply about what I ship.
+            hands-on work — hackathons, freelance builds, cybersecurity practice, and real-world development. I move fast, <br></br>
+            think in systems, and think like an attacker so that what I ship stays secure.
+            My impact speaks for itself.
             </p> 
-            <p>My impact is incomparable.</p>
          </div>
-          <Button href="/resume.pdf" download={false} />
+          <Button href="/Vrishank_Cyber_Resume.pdf" download={false} />
         </div>
     </div>
     

@@ -31,10 +31,10 @@
   },
   {
     "id": "project-4",
-    "title": "Crypto Marketplace",
-    "category": "Crypto Currency",
+    "title": "Loconomics",
+    "category": "Logistics",
     "description": "Loconomics is a logistics optimization platform that finds the most efficient routes and warehouse connections, helping businesses reduce transportation time, distance, and costs.",
-    "tags": ["Crypto Dataset", "Mongo DB", "Reactjs"],
+    "tags": ["Ollama", "Mongo DB", "Reactjs"],
     "link": "#",
     "mediaKey": "project4",
     "mediaType": "image"

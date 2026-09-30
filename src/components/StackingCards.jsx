@@ -34,6 +34,14 @@ const cards = [
     description: "I implement cloud-connected features and robust authentication systems that protect user data and scale with demand.",
     skills: ["Cloud Services integration", "Secure data handling","Critical Thinking","Team Collaboration"],
     color: "#ffffff"
+  },
+  {
+    id: 5,
+    label: "Cybersecurity Skills",
+    title: "05.Cybersecurity & Analysis",
+    description: "I have a strong foundation in cybersecurity — including defensive strategies, security analysis, and secure development practices that protect applications from real-world threats.",
+    skills: ["Secure Development","Vulnerability Assessment","Threat Analysis","Incident Response","Ethical Hacking","Security Tools & Frameworks"],
+    color: "#ffffff"
   }
 ];
 

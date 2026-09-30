@@ -32,7 +32,7 @@ const Hero = ({ scrollYProgress }) => {
           </div>
 
           <div className='right-text'>
-            <span className="hero-label top-right">Full Stack Developer</span>
+            <span className="hero-label top-right">Cybersecurity Engineer</span>
             <p>KIRPANE</p>
           </div>
         </div>  
