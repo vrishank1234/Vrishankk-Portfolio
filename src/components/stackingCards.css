@@ -108,3 +108,47 @@
   font-family: "GeneralSans-Regular";
   font-weight: 400;
 }
+
+/* ─── Mobile Flat Layout (replaces sticky stacking) ─────────────────────── */
+.stacking-cards-mobile {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 0 1.5rem 2rem;
+  margin-top: 1.5rem;
+}
+
+.card--mobile {
+  position: static !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  padding: 1.75rem !important;
+  border-radius: 24px !important;
+  top: auto !important;
+  transform: none !important;
+}
+
+@media (max-width: 480px) {
+  .stacking-cards-mobile {
+    padding: 0 1.25rem 1.5rem;
+  }
+
+  .card-title {
+    font-size: 1.3rem;
+  }
+
+  .card-label {
+    font-size: 12px;
+    margin-bottom: 18px;
+  }
+
+  .card-description {
+    font-size: 0.9rem;
+    margin-bottom: 24px;
+  }
+
+  .card-skills li {
+    font-size: 13px;
+    margin-left: 5%;
+  }
+}

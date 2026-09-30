@@ -1,5 +1,5 @@
-import React, { useRef } from 'react';
-import { motion, useScroll, useTransform, useMotionTemplate } from 'framer-motion';
+import React, { useRef, useState, useEffect } from 'react';
+import { motion, useScroll, useTransform } from 'framer-motion';
 import './stackingCards.css';
 
 const cards = [
@@ -86,6 +86,33 @@ export default function StackingCards() {
     target: container,
     offset: ['start start', 'end end']
   });
+
+  const [isMobile, setIsMobile] = useState(() => window.innerWidth <= 768);
+  useEffect(() => {
+    const onResize = () => setIsMobile(window.innerWidth <= 768);
+    window.addEventListener('resize', onResize);
+    return () => window.removeEventListener('resize', onResize);
+  }, []);
+
+  // On mobile: render as a simple flat list (no sticky stacking)
+  if (isMobile) {
+    return (
+      <div className="stacking-cards-mobile">
+        {cards.map((card) => (
+          <div key={card.id} className="card card--mobile">
+            <span className="card-label">{card.label}</span>
+            <h2 className="card-title">{card.title}</h2>
+            <p className="card-description">{card.description}</p>
+            <ul className="card-skills">
+              {card.skills.map((skill, index) => (
+                <li key={index}>{skill}</li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
+    );
+  }
 
   return (
     <div ref={container} className="stacking-cards-wrapper">

@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import gsap from "gsap";
 import Lenis from '@studio-freight/lenis';
 import { useScroll } from 'framer-motion';
@@ -20,6 +20,15 @@ const App = () => {
     target: sideCardContainer,
     offset: ['start start', 'end end']
   });
+
+  // Detect mobile to hide SideCard overlay
+  const [isMobile, setIsMobile] = useState(() => window.innerWidth <= 768);
+
+  useEffect(() => {
+    const handleResize = () => setIsMobile(window.innerWidth <= 768);
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   useEffect(() => {
     const lenis = new Lenis({
@@ -55,29 +64,31 @@ const App = () => {
             <About />
           </div>
 
-          {/* Sticky SideCard Container */}
-          <div style={{ 
-            position: 'absolute', 
-            top: 0, 
-            left: 0, 
-            right: 0, 
-            bottom: -250, 
-            pointerEvents: 'none',
-            zIndex: 10
-          }}>
+          {/* Sticky SideCard Container — hidden on mobile */}
+          {!isMobile && (
             <div style={{ 
-              position: 'sticky', 
-              top: '0vh', 
-              height: '85vh', 
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
+              position: 'absolute', 
+              top: 0, 
+              left: 0, 
+              right: 0, 
+              bottom: -250, 
+              pointerEvents: 'none',
+              zIndex: 10
             }}>
-              <div style={{ width: '420px', height: '580px' }}>
-                <SideCard scrollYProgress={scrollYProgress} />
+              <div style={{ 
+                position: 'sticky', 
+                top: '0vh', 
+                height: '85vh', 
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+              }}>
+                <div style={{ width: '420px', height: '580px' }}>
+                  <SideCard scrollYProgress={scrollYProgress} />
+                </div>
               </div>
             </div>
-          </div>
+          )}
         </div>
 
         <TextScroll />

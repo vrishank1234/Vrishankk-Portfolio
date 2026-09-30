@@ -2,6 +2,7 @@ import React from 'react'
 import './hero.css'
 import SideCard from '../components/SideCard'
 import bgVideo from '../assets/abstract-white-background-4k-motion-graphics-background-loop-white-video-loop-1080-ytshorts.savetube.me_.mp4'
+import profileImg from '../assets/second.jpeg'
 
 const Hero = ({ scrollYProgress }) => {
   return (
@@ -35,7 +36,12 @@ const Hero = ({ scrollYProgress }) => {
             <span className="hero-label top-right">Cybersecurity Engineer</span>
             <p>KIRPANE</p>
           </div>
-        </div>  
+        </div>
+
+        {/* Mobile-only profile image */}
+        <div className="hero-mobile-photo">
+          <img src={profileImg} alt="Vrishank Kirpane" />
+        </div>
       </div>
     </div>
   )

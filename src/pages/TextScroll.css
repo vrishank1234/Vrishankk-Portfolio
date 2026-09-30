@@ -50,3 +50,39 @@
   
 
 }
+
+/* ─── Responsive Breakpoints ────────────────────────────────────────────── */
+@media (max-width: 1024px) {
+  .text-scroll-content,
+  .text-scroll-content .word {
+    font-size: 38px;
+    line-height: 52px;
+  }
+}
+
+@media (max-width: 768px) {
+  .text-scroll-container {
+    padding: 3rem 1.5rem;
+    margin: 2rem 0;
+  }
+
+  .text-scroll-content,
+  .text-scroll-content .word {
+    font-size: 26px;
+    line-height: 38px;
+  }
+}
+
+@media (max-width: 480px) {
+  .text-scroll-container {
+    padding: 2.5rem 1.25rem;
+    margin: 1rem 0;
+  }
+
+  .text-scroll-content,
+  .text-scroll-content .word {
+    font-size: 22px;
+    line-height: 32px;
+  }
+}
+

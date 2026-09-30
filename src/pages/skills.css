@@ -104,3 +104,62 @@ span {
   color: #6d6d6d;
   margin: 0;
 }
+
+/* ─── Responsive Breakpoints ────────────────────────────────────────────── */
+@media (max-width: 1024px) {
+  .fusion-content {
+    margin-left: 5%;
+    width: calc(100% - 5%);
+  }
+}
+
+@media (max-width: 768px) {
+  .skills {
+    padding: 2rem 0 3rem;
+  }
+
+  .fusion-content {
+    margin-left: 0;
+    width: 100%;
+    padding: 0 1.5rem;
+    box-sizing: border-box;
+    margin-bottom: 1.5rem;
+  }
+
+  .fusion-text h5 {
+    font-size: 13px;
+  }
+
+  .fusion-text h3 {
+    font-size: 2.2rem;
+  }
+
+  .fusion-text p {
+    font-size: 0.9rem;
+    margin-top: 4%;
+  }
+
+  .stack-container {
+    height: auto;
+    min-height: 80vh;
+  }
+
+  .skill-card-content h3 {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .fusion-content {
+    padding: 0 1.25rem;
+  }
+
+  .fusion-text h3 {
+    font-size: 1.9rem;
+  }
+
+  .skill-icon {
+    font-size: 2.5rem;
+  }
+}
+
